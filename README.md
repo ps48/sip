@@ -1,5 +1,5 @@
 # sip
-A Small Image Processing library in native c++, using libjpeg 
+Small Image Processing Scripts in native C, using libjpeg 
 
 libjpeg - http://ijg.org/ 
 
