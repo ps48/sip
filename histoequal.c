@@ -91,17 +91,6 @@ int read_jpeg_file( char *filename )
 	  if(a[i]>0)
 	   no++;
 
-	for(i=0;i<256;i++)
-	{
-        printf("%d :",i);
-
-	  for(j=0;j<a[i];j++)
-	  {
-        printf("%c",'*');
-	  }
-	  printf("\n");
-	}
-
    	long long pix[no],it,pixcount[no],pixcdf[no],npix[no];
 
     for(it=0;it<256;it++)
@@ -120,25 +109,25 @@ int read_jpeg_file( char *filename )
 	      pixcdf[i]=pixcdf[i-1]+pixcount[i];
 	   }
 
-	long long cmin=99999999999;
+	long long cmin=999999999999999999;
 
     for(i=0;i<no;i++)
       if(pixcdf[i]<cmin)
-
-         cmin=pixcdf[i];
+		   cmin=pixcdf[i];
 
 	for(i=0;i<no;i++)
-      npix[i]=(pixcdf[i]-cmin)/(width*height-cmin)*255;
-
+      npix[i]=((float)(pixcdf[i]-cmin)/(width*height-cmin))*255;
 
     for(i=0;i<len;i++)
-       for(j=0;j<no;j++)
-          if(pix[j]==i)
-          {
-            raw_image[i]=(char)npix[j];
-            break;
-          }
+    	for(j=0;j<no;j++)
+    		if(raw_image[i]==pix[j])
+    		{
+    			raw_image[i]=npix[j];
+    			break;
+    		}
+  
 
+  
 	jpeg_finish_decompress( &cinfo );
 	jpeg_destroy_decompress( &cinfo );
 	free( row_pointer[0] );
