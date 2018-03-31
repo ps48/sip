@@ -1,27 +1,27 @@
 sip 
 ===
-##Small Image Processing Scripts in native C, using libjpeg 
+## Small Image Processing Scripts in native C, using libjpeg 
 ---------------------------------------------------------
 
-###Usage Instructions
+### Usage Instructions
 
-####**Install libjpeg:**
+#### **Install libjpeg:**
 - [libjpeg](http://ijg.org/).
 - [libjpeg git repo](https://github.com/LuaDist/libjpeg/).
 
-####**Commands:**
+#### **Commands:**
 	
 	$ gcc -o name_script file_name.c -ljpeg            //to create an executable script
 	
 	$ ./name_script input_image.jpg output_image.jpg   //to execute the scripts
   
-####**Example JPG Files**
+#### **Example JPG Files**
 
 Check out the example files converted using filters in the example_out folders.
 
-###Contents 
+### Contents 
 
-####convolution_filters
+#### convolution_filters
 
 - Edge Detection Filters 
 	* Perwitt
@@ -39,12 +39,12 @@ Check out the example files converted using filters in the example_out folders.
 	* Sharpen
 	* Emboss
 
-####gray_filters
+#### gray_filters
 
 - Average Method
 - Weighted Method
 
-####median_filters
+#### median_filters
 
 - Normal median filter
 
@@ -55,7 +55,7 @@ Check out the example files converted using filters in the example_out folders.
 	* Torben Method
 	* Wirth Method
 
-####open
+#### open
 
 - Histogram Equalisation
 
